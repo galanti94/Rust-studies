@@ -1,18 +1,19 @@
+// static creates an address for my variable
+static GLOBAL_VARIABLE:u8 = 1;
+
+// I can create a global variable that is mutable, but it is unsafe
+static mut UNSAFE_GLOBAL:u8 = 10;
+
 fn main() {
-    let x = 1000;
+    // In some cases I only need constant values that will not be manipulated dring execution
 
-    println!("The number {} has {} bytes", x, std::mem::size_of_val(&x));
+    const PI:f32 = 3.14;
 
-    let decimal: f32 = 2.5;
+    println!("PI = {}", PI); // Compiler only substitutes
 
-    println!("The number {} has {} bytes", decimal, std::mem::size_of_val(&decimal));
+    println!("global_variable = {}", GLOBAL_VARIABLE);
 
-    // I can't have false as 0 in Rust (what is common in C++)
-    let check = false; // True boolean
-    let check_zero = 0; // Not a bollean
-
-    // Rust uses UTF-8 thats why char has 4 bytes
-    let letter = 'A';
-
-    println!("The number {} has {} bytes", letter, std::mem::size_of_val(&letter));
+    unsafe {
+        println!("global_variable = {}", UNSAFE_GLOBAL);
+    }
 }
