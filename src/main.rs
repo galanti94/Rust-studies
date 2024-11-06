@@ -1,10 +1,14 @@
-fn sum_two_values(num1:i32, num2:i32) -> i32 {
-    return num1 + num2;
-}
-
 fn main() {
-    let num1 = 10;
-    let num2 = 20;
+    let idade:u8 = 15;
+    let autorizado:bool = true;
 
-    println!("sum = {}", sum_two_values(num1, num2));
+    if idade > 18 || autorizado {
+        println!("Pode beber cerveja!");
+        // return;
+    } else {println!("Não pode beber certeja!");}    
+
+    // Posso passar tudo como expressão
+    let condicao = if idade > 18 { "maior" } else { "menor" };
+
+    println!("{}", condicao);
 }
