@@ -1,19 +1,10 @@
-// static creates an address for my variable
-static GLOBAL_VARIABLE:u8 = 1;
-
-// I can create a global variable that is mutable, but it is unsafe
-static mut UNSAFE_GLOBAL:u8 = 10;
+fn sum_two_values(num1:i32, num2:i32) -> i32 {
+    return num1 + num2;
+}
 
 fn main() {
-    // In some cases I only need constant values that will not be manipulated dring execution
+    let num1 = 10;
+    let num2 = 20;
 
-    const PI:f32 = 3.14;
-
-    println!("PI = {}", PI); // Compiler only substitutes
-
-    println!("global_variable = {}", GLOBAL_VARIABLE);
-
-    unsafe {
-        println!("global_variable = {}", UNSAFE_GLOBAL);
-    }
+    println!("sum = {}", sum_two_values(num1, num2));
 }
