@@ -1,14 +1,30 @@
 fn main() {
-    let idade:u8 = 15;
-    let autorizado:bool = true;
+    let multiplicator:u8 = 5;
 
-    if idade > 18 || autorizado {
-        println!("Pode beber cerveja!");
-        // return;
-    } else {println!("Não pode beber certeja!");}    
+    let mut counter:u8 = 0;
 
-    // Posso passar tudo como expressão
-    let condicao = if idade > 18 { "maior" } else { "menor" };
+    while counter < 10 {
+        counter += 1;
 
-    println!("{}", condicao);
+        if counter == 5 { continue };
+
+        println!("{} x {} = {}", multiplicator, counter, multiplicator * counter);
+    }
+
+    counter = 0;
+
+    // Equivalente ao while infinito while true
+    loop {
+        counter +=1;
+
+        println!("{} x {} = {}", multiplicator, counter, multiplicator * counter);
+
+        if counter == 10 {
+            break;
+        }
+    }
+
+    for index in 1..=10 {
+        println!("{} x {} = {}", index, multiplicator, index * multiplicator);
+    }
 }
